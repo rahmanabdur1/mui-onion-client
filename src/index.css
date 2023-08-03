@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* Your CSS reset to remove default button styles (optional) */
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Plain button styles */
+.plain-button {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Styling on hover (optional) */
+.plain-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Styling on click (optional) */
+.plain-button:active {
+  background-color: #ddd;
+}
