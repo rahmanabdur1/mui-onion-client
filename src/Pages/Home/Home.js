@@ -3,6 +3,7 @@ import HeroSection from '../../Components/HeroSection/HeroSection';
 import FoodCategory from '../../Components/FoodCategory/FoodCategory';
 import Features from '../../Components/Features/Features';
 import { Stack } from '@mui/material';
+import Footer from '../../Components/Footer/Footer';
 
 const Home =(() => {
     return (
@@ -10,6 +11,7 @@ const Home =(() => {
        <HeroSection/>
        <FoodCategory/>
        <Features/>
+       <Footer/>
         </Stack>
     );
 });

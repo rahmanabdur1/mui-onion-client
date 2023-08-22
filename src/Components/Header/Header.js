@@ -1,9 +1,12 @@
-import { Container, IconButton, Button, Stack } from '@mui/material';
+import { Container, Badge, Button, Stack } from '@mui/material';
 import React from 'react';
 import { FlexBox } from '../../styled/FlexBox';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useCart } from '../../hooks/useCart';
 
 const Header = () => {
+    const {cart} =useCart();
+    const quantity = cart.reduce((acc, curr) => curr.quantity + acc, 0);
     return (
         <Container maxWidth='lg'>
             <FlexBox sx={{
@@ -17,9 +20,21 @@ const Header = () => {
                     }}
                 />
                 <Stack spacing={4} direction='row' sx={{ alignContent: 'center' }}>
-                    <IconButton>
-                        <ShoppingCartOutlinedIcon />
-                    </IconButton>
+                <Badge
+                  badgeContent={quantity}
+                  color='primary'
+                  sx={{
+                     cursor: 'pointer',
+                     '&:hover': {
+                        '& > svg': {
+                           color: 'primary.main',
+                        },
+                     },
+                  }}
+               >
+                  <ShoppingCartOutlinedIcon />
+               </Badge>
+
                     <Button variant='text' sx={{ color: '' }}> Sign In </Button>
                     <Button>Sign Up</Button>
                 </Stack>
